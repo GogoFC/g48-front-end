@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        *{
+            font-size: 15px;
+        }
+
+        body {
+            background-color: gray;
+        }
+
+        header {
+            font-family: 'Times new Roman', Georgia;
+            font-size: 2em;
+            text-align : center;
+        }
+
+        .container {
+            background-color: rgb(214, 183, 244);
+            border: black dotted;
+            width: 50%;
+        }
+
+        #child-item{
+            color: red;
+            font-family: "consolas";
+        }
+
+        li:hover{
+            color: green;
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+
+    <header>CSS Selectors</header>
+
+    <div class="container">
+        <ul>
+            <li>List Item</li>
+            <li>
+                <ul>
+                    <li id="child-item">List Item</li>
+                </ul>
+            </li>
+            <li>List Item</li>
+            <li>List Item</li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

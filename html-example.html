@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <header>
+        <h3>Header</h3>
+    </header>
+
+
+    <form>
+
+        <label>First Name</label>
+        <input type="text" placeholder="Enter First name here..." id="fn" name="firstName">
+
+        <label>Last Name</label>
+        <input type="text" placeholder="Enter last Name..."
+        id="ln" name="lastName"/>
+
+        <label>Email</label>
+        <input required type="email" placeholder="Enter Email..."
+        id="email" name="email"/>
+
+        <label id="course" name="course">Course</label>
+        <select>
+            <option>Java</option>
+            <option>C#</option>
+            <option>Python</option>
+        </select>
+
+        <label>Description</label>
+        <textarea placeholder="Tell us about you experiences..."></textarea>
+
+
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+
+    </form>
+    
+    <hr>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th colspan="2">Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Mehrdad</td>
+                <td>Javan</td>
+                <td><button>Delete</button></td>
+                <td><button>Edit</button></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Simon</td>
+                <td>Elbrink</td>
+                <td><button>Delete</button></td>
+                <td><button>Edit</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+    <hr>
+
+
+
+    <footer>
+        Copyright &copy; 2023 Lexicon
+    </footer>
+
+
+</body>
+
+</html>

@@ -48,8 +48,106 @@
       <script src="index.js"></script>
 
       <div class="card">
-        <div class="card-header bg-dark text-white">Registration Form</div>
+        <div class="card-header bg-dark text-white">Registration User</div>
         <div class="card-body">
+          <div class="container mb-5">
+            <h1>Registraion Form</h1>
+            <!-- Registration a User-->
+            <form id="registrationForm">
+              <div class="form-floating my-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="fname"
+                  placeholder="Enter first name"
+                  required
+                />
+                <label for="fname">FirstName: *</label>
+                <div class="invalid-feedback">
+                  Please enter your First name.
+                </div>
+              </div>
+
+              <div class="form-floating my-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="lname"
+                  placeholder="Enter last name"
+                  required
+                />
+                <label for="lname">LastName: *</label>
+                <div class="invalid-feedback">Please enter your Last Name.</div>
+              </div>
+
+              <div class="form-floating my-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="email"
+                  placeholder="Enter Email"
+                  required
+                />
+                <label for="email">Email: *</label>
+                <div class="invalid-feedback">Please enter your email.</div>
+              </div>
+
+              <button id="reg-btn" type="button" class="btn btn-primary">
+                Validate
+              </button>
+              <button
+                id="reset-btn"
+                type="button"
+                class="btn btn-danger"
+                onclick="resetForm()"
+              >
+                Reset
+              </button>
+            </form>
+          </div>
+
+          <!--Validate & Reset Form-->
+          <script>
+            document
+              .getElementById("reg-btn")
+              .addEventListener("click", () => validateAndSubmit());
+
+            validateAndSubmit = () => {
+              const firstName = document.getElementById("fname").value.trim();
+              const lastName = document.getElementById("lname").value.trim();
+              const email = document.getElementById("email").value.trim();
+              console.log(firstName, lastName, email);
+
+              if (!firstName || !lastName || !email) {
+                if (!firstName) {
+                  document.getElementById("fname").classList.add("is-invalid");
+                }
+                if (!lastName) {
+                  document.getElementById("lname").classList.add("is-invalid");
+                }
+                if (!email) {
+                  document.getElementById("email").classList.add("is-invalid");
+                }
+
+                return;
+              }
+
+              // clear existing validation classes if corrected
+              document.getElementById("fname").classList.remove("is-invalid");
+              document.getElementById("lname").classList.remove("is-invalid");
+              document.getElementById("email").classList.remove("is-invalid");
+            };
+
+            resetForm = () => {
+              document.getElementById("registrationForm").reset();
+
+              document.getElementById("fname").classList.remove("is-invalid");
+              document.getElementById("lname").classList.remove("is-invalid");
+              document.getElementById("email").classList.remove("is-invalid");
+            };
+          </script>
+
+          <!-- Show / Hide Buttons-->
           <div>
             <button
               type="button"
@@ -69,10 +167,7 @@
           </div>
 
           <section id="data-table">
-
             <div id="message"></div>
-
-
 
             <!--
                     <table id="dynamicTable" class="table table-striped">
@@ -116,5 +211,11 @@
         <div class="card-footer bg-secondary text-white">Footer</div>
       </div>
     </div>
+
+    <footer class="caontainer-fluid bg-dark text-white text-center py-2 mt-5"
+
+    >&copy <strong class="text-danger">Lexicon</strong> Växjö </footer>
+
+
   </body>
 </html>

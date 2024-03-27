@@ -6,12 +6,26 @@
     <title>Document</title>
   </head>
   <body>
-    <h1 id="main">JavaScript in HTML!</h1>
-    <!--
-      <script>
+    <div id="main">JavaScript in HTML!</div>
+
+    <footer style="color: green;">Test Footer</footer>
+
+    <script>
       console.log("Hello JS!");
-    </script>  
-    -->
-    <script src="./index.js"></script>
+      document.getElementById("main").innerHTML = "I Love JS!";
+
+      const footerElement = document.getElementsByTagName("footer")[0];
+      footerElement.innerHTML ="<b> Footer <b/>";
+      footerElement.style.color = "Red"; // overrides green color
+
+      const para = document.createElement("p");
+      para.innerHTML = "This is a Paragraph";
+      document.getElementById("main").appendChild(para);
+      //document.body.appendChild(para);
+
+
+    </script>
+
+    <!--<script src="./index.js"></script> -->
   </body>
 </html>

@@ -55,7 +55,8 @@ function showTable(){
     dataTable.appendChild(table);
 
     }
-    
+
+    displayMessage(true);
 }
 
 
@@ -66,5 +67,20 @@ function hideTable(){
 
     if(table){
         table.remove();
+        displayMessage(false);
+    }
+}
+
+
+function displayMessage(input){
+    const messageElement = document.getElementById("message");
+
+    if(input){
+        messageElement.innerHTML = "<strong>Success!</strong> Indicates a successful or positive action.";
+        messageElement.classList.add("alert", "alert-success");
+        messageElement.hidden = false;
+    }else{
+        messageElement.innerHTML = "";
+        messageElement.hidden = true;
     }
 }

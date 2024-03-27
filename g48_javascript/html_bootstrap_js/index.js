@@ -13,7 +13,8 @@ const data = [
 function showTable(){
     console.log("TableShow() has been executed!");
 
-    const table = document.createElement("table");
+    if(!document.getElementById("dynamicTable")){
+        const table = document.createElement("table");
     table.id = "dynamicTable";
     table.classList.add("table", "table-striped");
 
@@ -53,6 +54,8 @@ function showTable(){
     const dataTable = document.getElementById("data-table");
     dataTable.appendChild(table);
 
+    }
+    
 }
 
 

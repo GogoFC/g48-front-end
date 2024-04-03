@@ -4,7 +4,7 @@ const Header = () => {
     // js variables & functions
 
     const headerElement =
-        <header className='container-fluid bg-danger text-white py-5'>
+        <header className='container-fluid bg-danger text-white pt-3 pb-5'>
             <div>
                 <h1>Header Content!</h1>
             </div>
@@ -13,7 +13,9 @@ const Header = () => {
     return (
         <>
             <Nav />
-            {headerElement}
+            {/* Comment 
+            - all JS code inside return need to be in curly-brackets. */}
+            {headerElement} 
         </>
     );
 }

@@ -2,6 +2,7 @@
 import React from 'react';
 import Footer from './Footer';
 import Header from './Header';
+import Table from './Table';
 
 
 function App() {
@@ -10,7 +11,9 @@ function App() {
     return (
         <>
             <Header />
-            <div className='container'>Some app content</div>
+            <div className='container'>
+                <Table/>
+            </div>
             <Footer />
         </>
     );

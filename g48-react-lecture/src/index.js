@@ -3,7 +3,8 @@ import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.js";
 
 import NameList from "./ex4_props/NameList";
-import App from "./ex4_props/App.js";
+import App from "./ex2_functions/App.js";
+import Counter from "./ex5_state/Counter.js";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -13,5 +14,5 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 /* <NameList names={names} />*/
 
 root.render(
-    <App/>
+    <Counter/>
 )

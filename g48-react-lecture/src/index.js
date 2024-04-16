@@ -1,3 +1,4 @@
+import React from "react";
 import ReactDOM from "react-dom/client";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.js";
@@ -10,8 +11,6 @@ import ToggleModeButton from "./ex5_state/ToggleModeButton.js";
 import HooksDemo from "./ex7_hooks/HooksDemo.js";
 import TodoList from "./ex7_hooks/TodoList.js";
 
-
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 //const names = ["Simon Elbrink", "Mehrdad Javan", "Marcus Gudmundsen"];
@@ -19,9 +18,9 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 /* <NameList names={names} />*/
 
 root.render(
-    <>
-    <ToggleModeButton/>
-    <HooksDemo/>
-    <TodoList/>
-    </>
-)
+  <React.StrictMode>
+    <ToggleModeButton />
+    <HooksDemo />
+    <TodoList />
+  </React.StrictMode>
+);

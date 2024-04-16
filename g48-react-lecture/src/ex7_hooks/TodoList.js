@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 const TodoList = () => {
+
   const [todos, setTodos] = useState([]);
 
   useEffect(() => {
@@ -62,20 +63,21 @@ const TodoList = () => {
           {todos.map((todo) => {
 
             const trElement = (
-              <tr>
+              <tr key={todo.id}>
                 <td>{todo.id}</td>
                 <td>{todo.title}</td>
                 <td>{todo.completed ? "Yes" : "No"}</td>
                 <td>
                     <button className="btn btn-warning">Edit</button>
                     <button className="btn btn-danger mx-1">Delete</button>
-
                 </td>
               </tr>
             );
 
             return trElement;
+
           })}
+          
         </tbody>
       </table>
     </div>

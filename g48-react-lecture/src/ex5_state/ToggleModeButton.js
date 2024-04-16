@@ -12,14 +12,12 @@ const ToggleModeButton = () => {
 
     return (
         <div className='container-fluid mt-4'>
-
                 <nav className={`navbar navbar-expand-lg ${darkMode ? 'navbar-dark bg-dark' : 'navbar-light bg-light' }`}>
                 <div className='container-fluid'>
-                    <a className='navbar-brand' href='#'
-                    
-                    >{darkMode ? 'Dark Mode' : 'Light Mode'}</a>
+                    <a className='navbar-brand' href='#'>
+                        {darkMode ? 'Dark Mode' : 'Light Mode'}
+                    </a>
                     <img src={darkMode ? '/logo-light.png': '/logo-dark.png'}  />
-
                 </div>
             </nav>
 
@@ -29,8 +27,6 @@ const ToggleModeButton = () => {
                 <button type='button' className={`btn ${darkMode ? 'btn-light' :"btn-dark"}`} onClick={toggleModeHandler}>Toggle Mode</button>
             </div>
 
-
-            
         </div>
     );
 };

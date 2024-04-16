@@ -22,9 +22,6 @@ const HooksDemo = () => {
 
     };
 
-
-
-
     return (
         <div className='container mt-5'>
             <h3>Hooks Demo</h3>
@@ -38,7 +35,6 @@ const HooksDemo = () => {
                     onClick={updateDateHandler}>Update Date</button>
                 </div>
             </div>
-
             
         </div>
     );

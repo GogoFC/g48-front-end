@@ -7,6 +7,7 @@ import App from "./ex2_functions/App.js";
 import Counter from "./ex5_state/Counter.js";
 import MyComponent from "./ex6_demo_lifecycle/MyComponent.js";
 import ToggleModeButton from "./ex5_state/ToggleModeButton.js";
+import HooksDemo from "./ex7_hooks/HooksDemo.js";
 
 
 
@@ -17,5 +18,8 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 /* <NameList names={names} />*/
 
 root.render(
+    <>
     <ToggleModeButton/>
+    <HooksDemo/>
+    </>
 )

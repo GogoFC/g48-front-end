@@ -8,6 +8,7 @@ import Counter from "./ex5_state/Counter.js";
 import MyComponent from "./ex6_demo_lifecycle/MyComponent.js";
 import ToggleModeButton from "./ex5_state/ToggleModeButton.js";
 import HooksDemo from "./ex7_hooks/HooksDemo.js";
+import TodoList from "./ex7_hooks/TodoList.js";
 
 
 
@@ -21,5 +22,6 @@ root.render(
     <>
     <ToggleModeButton/>
     <HooksDemo/>
+    <TodoList/>
     </>
 )

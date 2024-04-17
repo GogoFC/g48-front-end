@@ -11,6 +11,8 @@ import ToggleModeButton from "./ex5_state/ToggleModeButton.js";
 import HooksDemo from "./ex7_hooks/HooksDemo.js";
 import TodoList from "./ex7_hooks/TodoList.js";
 import EmailForm from "./ex7_hooks/EmailForm.js";
+import ReactHookFrom from "./ex7_hooks/ReactHookFrom.js";
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -20,9 +22,15 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
+
+    {/*
     <ToggleModeButton />
     <EmailForm />
     <HooksDemo />
     <TodoList />
+    */}
+
+    <ReactHookFrom />
+
   </React.StrictMode>
 );

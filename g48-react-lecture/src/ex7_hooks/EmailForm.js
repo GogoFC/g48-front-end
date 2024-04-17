@@ -1,45 +1,66 @@
 import React, { useState } from "react";
 
 const EmailForm = () => {
-  const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
-  const [showAlert, setShowAlert] = useState(false);
+  const [person, setPerson] = useState({email: "", name: ""});
+  const [errorMessage, setErrorMessage] = useState({email: "", name: ""});
   
 
   const emailChangeHandler = (e) => {
-    console.log(e.target.value);
-
-    setEmail(e.target.value);
+    //console.log(e.target.value);
+    const _person = {...person}; 
+    _person.email = e.target.value;
+  
+    setPerson(_person);
   };
 
   const nameChangeHandler = (e) => {
     console.log(e.target.value);
+    const _person = {...person}; 
+    _person.name = e.target.value;
 
-    setName(e.target.value);
+    setPerson(_person);
   };
 
   const formValidationHandler = () => {
     console.log("Validation button clicked!");
 
+    let isValid = true;
+    let error = {email: "", name: ""};
+    
+
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if(!emailRegex.test(email)){
-      console.log("Error in validating the Email!")
-      setShowAlert(true);
-    }else{
-      setShowAlert(false);
+    if(!emailRegex.test(person.email)){
+      //console.log("Error in validating the Email!");
+      isValid = false;
+      error.email = "Email is not valid";
     }
 
+    if(person.name === ''){
+      isValid = false;
+      error.name = "Name is not valid";
+    }
+
+    setErrorMessage(error);
 
 
+    if(isValid){
+      //const person = {email: email, name: name};
 
+      console.log(person);
+
+      console.log("Send Data to Backend....");
+
+
+    }
 
   };
 
 
   const buttonResetHandler = () => {
-    setEmail("");
-    setName("");
+    setPerson({email: "", name: ""});
+    setErrorMessage({email: "", name: ""});
+
   };
 
   return (
@@ -49,8 +70,6 @@ const EmailForm = () => {
       <div className="row">
         <div className="col">
           <form>
-
-            {showAlert && <div className="alert alert-danger">Email Validation Failed</div>}
 
           <div className="mb-3 mt-3">
               <label htmlFor="name" className="form-label">
@@ -63,8 +82,11 @@ const EmailForm = () => {
                 placeholder="Enter Name"
                 name="name"
                 onChange={nameChangeHandler}
-                value={name}
+                value={person.name}
               />
+
+              {errorMessage && errorMessage.name && <p className="text-danger">{errorMessage.name}</p>}
+
             </div>
 
 
@@ -79,8 +101,10 @@ const EmailForm = () => {
                 placeholder="Enter email"
                 name="email"
                 onChange={emailChangeHandler}
-                value={email}
+                value={person.email}
               />
+
+            {errorMessage && errorMessage.email && <p className="text-danger">{errorMessage.email}</p>}
             </div>
 
             <button type="button" className="btn btn-primary" onClick={formValidationHandler}>

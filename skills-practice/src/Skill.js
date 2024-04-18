@@ -1,16 +1,11 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
+// Functional component for Skill Component
 const Skill = () => {
 
-    const initialState = [
-        { id: 1, title: "Java" }, { id: 2, title: "C#" }, { id: 3, title: "JavaScript" }]
-
-    const [skills, setSkills] = useState(initialState);
-
-
-
-
+    // State to manage the list of skills
+    const [skills, setSkills] = useState([]);
 
     // Nested functional component to display Skills
     const ShowData = ({ skills }) => {
@@ -26,7 +21,6 @@ const Skill = () => {
                     }
                 </ul>
             </div>
-
         );
     };
 
@@ -34,27 +28,28 @@ const Skill = () => {
     // Nested functional component, Form to add Skill.
     const Form = () => {
 
+        // Destructuring values from the react-hook-form hook
         const { register, handleSubmit } = useForm();
 
-
         const saveData = (data) => {
-
+            // Generate a unique id for the new skill
             const id = "A" + Math.random().toString(36).substr(2, 6);
 
+            // Create a new skill object
             const newEntry = { id: id, title: data.title };
 
+            // Update the skills list with the new skill
             setSkills((previousSkills) => [...previousSkills, newEntry]);
-
         }
 
-
+        // Form for Skill Entry
         return (
-
             <form className='container' onSubmit={handleSubmit(saveData)}>
 
                 <div className='row'>
 
                     <div className='col'>
+                        {/* Input field for the skill title */}
                         <input
                             type='text'
                             className='form-control'
@@ -64,6 +59,7 @@ const Skill = () => {
                     </div>
 
                     <div className='col'>
+                        {/* Button to submit the form and add a new skill */}
                         <button
                             type='submit'
                             className='btn btn-success'
@@ -71,9 +67,7 @@ const Skill = () => {
                     </div>
                 </div> 
 
-
             </form>
-
         );
     };
 
@@ -84,14 +78,12 @@ const Skill = () => {
     // Main render function of the Skill Component
     return (
         <div className='container'>
-
             <h1>Skills Practice</h1>
-
             <ShowData skills={skills} />
-
             <Form />
         </div>
     );
 };
 
+// Export the SkillPractice component as the default export
 export default Skill;

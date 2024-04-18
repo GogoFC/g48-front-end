@@ -29,7 +29,7 @@ const Skill = () => {
     const Form = () => {
 
         // Destructuring values from the react-hook-form hook
-        const { register, handleSubmit } = useForm();
+        const { register, handleSubmit, formState: {errors}, reset} = useForm();
 
         const saveData = (data) => {
             // Generate a unique id for the new skill
@@ -40,6 +40,9 @@ const Skill = () => {
 
             // Update the skills list with the new skill
             setSkills((previousSkills) => [...previousSkills, newEntry]);
+
+            // Reset the form after submission
+            reset();
         }
 
         // Form for Skill Entry
@@ -52,10 +55,12 @@ const Skill = () => {
                         {/* Input field for the skill title */}
                         <input
                             type='text'
-                            className='form-control'
+                            className={`form-control ${errors.title ? 'is-invalid' : ''}`}
                             placeholder='Enter a Skill Here'
-                            {...register('title')}
+                            {...register('title', {required: {value: true, message: "Required Field"}})}
                         />
+                        {/* Display an error message if the title is required and not provided */}
+                        {errors.title && (<span className="invalid-feedback">{errors.title.message}</span>)}
                     </div>
 
                     <div className='col'>
@@ -70,8 +75,6 @@ const Skill = () => {
             </form>
         );
     };
-
-
 
 
 

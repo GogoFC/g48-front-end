@@ -12,6 +12,7 @@ import HooksDemo from "./ex7_hooks/HooksDemo.js";
 import TodoList from "./ex7_hooks/TodoList.js";
 import EmailForm from "./ex7_hooks/EmailForm.js";
 import ReactHookFrom from "./ex7_hooks/ReactHookFrom.js";
+import AxiosDemo from "./ex8_axios/AxiosDemo.js";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -28,9 +29,10 @@ root.render(
     <EmailForm />
     <HooksDemo />
     <TodoList />
+    <ReactHookFrom />
     */}
 
-    <ReactHookFrom />
-
+    <AxiosDemo />
+    
   </React.StrictMode>
 );

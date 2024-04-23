@@ -14,6 +14,7 @@ import EmailForm from "./ex7_hooks/EmailForm.js";
 import ReactHookFrom from "./ex7_hooks/ReactHookFrom.js";
 import AxiosDemo from "./ex8_axios_router/AxiosDemo.js";
 import Header from "./ex8_axios_router/Header.js";
+import RouterDemo from "./ex8_axios_router/RouterDemo.js";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -34,7 +35,7 @@ root.render(
     <AxiosDemo />
     */}
 
-    <Header/>
+    <RouterDemo/>
     
   </React.StrictMode>
 );

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
 
@@ -10,9 +11,9 @@ const Header = () => {
     return (
         <nav className="navbar navbar-expand-sm bg-dark navbar-dark">
             <div className="container-fluid">
-                <a className="navbar-brand" href="#">
+                <Link className="navbar-brand" to="/" >
                     <img src={logo} width={75} alt={logo} />
-                </a>
+                </Link>
 
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
                     <span className="navbar-toggler-icon"></span>
@@ -23,9 +24,9 @@ const Header = () => {
                             links.map((link, index) => {
                                 const liElement =
                                     <li key={index} className="nav-item">
-                                        <a className="nav-link" href={link.href}>
+                                        <Link className="nav-link" to={link.href}>
                                             {link.text}
-                                        </a>
+                                        </Link>
                                     </li>;
                                 return liElement;
                             })

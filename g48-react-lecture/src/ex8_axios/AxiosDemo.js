@@ -40,16 +40,13 @@ const AxiosDemo = () => {
 
             <div className='col mt-3'>
 
-                {bookings.map(booking => {
-
-                    const bookingCard = <div key={booking.id} className='card mb-4 col-mb-3'>
+                {bookings.map(booking => (
+                    <div key={booking.id} className='card mb-4 col-mb-3'>
                         <div className='card-body'>
                             <h5 className='card-title'>{booking.dateTime}</h5>
                         </div> 
-                    </div>;
-
-                    return bookingCard;
-                })}
+                    </div>
+                ))}
 
             </div>
 
